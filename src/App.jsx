@@ -12,6 +12,7 @@ function App() {
         <NavBar/>
         <Hero/>
       </header>
+      <h1>New arrival</h1>
 
     </div>
   )
