@@ -3,10 +3,34 @@
 @tailwind utilities;
 
 
-* {
-  padding: 0;
-  margin: 0;
+ul li {
+  transition: all 300ms ease-in-out;
 }
-html, body {
-  box-sizing: border-box;
+
+ul li:hover {
+  border-bottom: 2px solid black;
+  padding-bottom: 
+  5px;
+}
+
+h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 600;
+}
+
+ul li:hover {
+  border-bottom: 2px solid black;
+  padding-bottom: 5px;
+}
+
+h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 600;
+}
+
+.header-bg {
+  background-image: url("./src/assets/316518250_11374602.png");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
 }
