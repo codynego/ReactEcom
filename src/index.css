@@ -40,3 +40,22 @@ h1 {
   background-repeat: no-repeat;
   overflow: visible;
 }
+
+.product-list {
+  overscroll-behavior-inline: contain;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.product-list::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
+.testimonial-container {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+.testimonial-container::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}

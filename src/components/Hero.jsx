@@ -12,7 +12,7 @@ export const Hero = () => {
               </p>
               <button className='bg-black px-6 py-3 text-white rounded-full md:w-[200px]'>Shop Now</button>
               <div className='flex gap-3 flex-wrap items-center justify-center md:gap-7 md:flex-nowrap'>
-                  <HeroItem heading={200} paragraph={"international Brands"} className="border-l-8"/>
+                  <HeroItem heading={200} paragraph={"international Brands"}/>
                   <p className='sm:border-l-2 sm:border-black'></p>
                   <HeroItem heading={2000} paragraph={"High-Quality Products"} />
                   <p className='sm:border-l-2 sm:border-black'></p>
