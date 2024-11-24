@@ -5,6 +5,7 @@ import { Hero } from './components/Hero'
 import { ProductList } from './Products/ProductList'
 import { Browse } from './Browse'
 import { Testimonial } from './Testomonial/Testimonial'
+import { Footer } from './Footer/Footer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,7 +22,9 @@ function App() {
         <Browse/>
         <Testimonial/>
       </main>
-
+      <footer>
+        <Footer/>
+      </footer>
     </div>
   )
 }

@@ -85,3 +85,7 @@ h1 {
 .scroll-button.right {
   right: 0;
 }
+
+.custom-width {
+  width: calc(100% - 40px);
+}
