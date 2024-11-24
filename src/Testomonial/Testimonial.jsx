@@ -12,7 +12,9 @@ export const Testimonial = () => {
     <div className='py-20'>
         <h1 className='text-4xl md:text-6xl'>OUR HAPPY CUSTOMERS</h1>
         <div className='relative'>
-            <button className='scroll-button left md:block hidden' onClick={() => scrollContainer('left')}>‹</button>
+            <button className='scroll-button hover:bg-slate-900 left md:block hidden rounded-xl' onClick={() => scrollContainer('left')}>
+            <i className="fa-solid fa-left-long"></i>
+            </button>
             <div className='testimonial-container grid gap-5 my-10 grid-flow-col auto-cols-[90%] md:auto-cols-[30%] overflow-x-scroll'>
                 <TestimonialCard review={3}/>
                 <TestimonialCard review={4}/>
@@ -22,7 +24,9 @@ export const Testimonial = () => {
                 <TestimonialCard review={2}/>
                 <TestimonialCard review={3}/>
             </div>
-            <button className='scroll-button right md:block hidden' onClick={() => scrollContainer('right')}>›</button>
+            <button className='scroll-button right md:block hidden hover:bg-slate-900 rounded-xl' onClick={() => scrollContainer('right')}>
+            <i class="fa-solid fa-right-long"></i>
+            </button>
         </div>
     </div>
   )
