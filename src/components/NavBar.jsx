@@ -3,7 +3,7 @@ import React from 'react';
 export const NavBar = () => {
   return (
     <div>
-      <nav className="flex gap-5 flex-row items-center justify-between font-semibold p-5">
+      <nav className="flex gap-5 flex-row items-center justify-between font-semibold p-7">
         <h1 className="font-bold text-4xl md:text-6xl">SHOP.CO</h1>
         <ul className="md:flex md:flex-row hidden gap-5 sm:gap-10">
           <li>Shop</li>
