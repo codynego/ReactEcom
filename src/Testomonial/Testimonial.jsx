@@ -15,7 +15,7 @@ export const Testimonial = () => {
             <button className='scroll-button hover:bg-slate-900 left md:block hidden rounded-xl' onClick={() => scrollContainer('left')}>
             <i className="fa-solid fa-left-long"></i>
             </button>
-            <div className='testimonial-container grid gap-5 my-10 grid-flow-col auto-cols-[90%] md:auto-cols-[30%] overflow-x-scroll'>
+            <div className='testimonial-container grid gap-5 my-10 grid-flow-col auto-cols-[90%] md:auto-cols-[47%] lg:auto-cols-[30%] overflow-x-scroll '>
                 <TestimonialCard review={3}/>
                 <TestimonialCard review={4}/>
                 <TestimonialCard review={2}/>

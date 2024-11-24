@@ -10,7 +10,7 @@ export const TestimonialCard = ({review}) => {
             ))}
         </div>
         <h2 className='text-black text-xl md:text-2xl font-semibold'>Sarah Udoh</h2>
-        <p className='overflow-auto'>Lorem ipsum dolor sit amet. ex odio perspiciatis fugiat omnis debitis nisi alias sed adipisci earum expedita et ducimus! Unde ea voluptas ratione et quaerat.</p>
+        <p className='overflow-hidden'>Lorem ipsum dolor sit amet. ex odio perspiciatis fugiat omnis debitis nisi alias sed adipisci earum expedita et ducimus! Unde ea voluptas ratione et quaerat.</p>
     </div>
   )
 }
