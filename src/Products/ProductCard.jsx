@@ -1,9 +1,26 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react';
 
 export const ProductCard = ({ image }) => {
+  const cardRef = useRef(null);
+  const [cardSize, setCardSize] = useState(0);
+
+  useEffect(() => {
+    if (cardRef.current) {
+      setCardSize(cardRef.current.offsetWidth);
+    }
+  }, [cardRef.current]);
+
   return (
-    <div className='product-card duration-500 border-black rounded-2xl bg-gray-200 hover:drop-shadow-xl'>
-      <img src='src/assets/316518250_11374602.png' alt="Product" className='w-full h-full object-cover rounded-2xl' />
+    <div
+      ref={cardRef}
+      className='product-card duration-500 border-black rounded-2xl bg-gray-200 hover:drop-shadow-xl'
+      style={{ height: `${cardSize + 10}px` }}
+    >
+      <img
+        src='src/assets/316518250_11374602.png'
+        alt="Product"
+        className='w-full h-full object-cover rounded-2xl'
+      />
     </div>
-  )
-}
+  );
+};

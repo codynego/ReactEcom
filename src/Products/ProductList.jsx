@@ -6,7 +6,7 @@ export const ProductList = ({title}) => {
   return (
     <div className="flex flex-col justify-center items-center gap-10">
         <h1 className='text-4xl md:text-6xl'>{title}</h1>
-        <div className='product-list grid grid-flow-col auto-cols-[67%] gap-4 overflow-x-auto md:auto-cols-[22%] md:gap-12 md:place-items-center md:m-auto'>
+        <div className='product-list grid grid-flow-col auto-cols-[67%] gap-4 overflow-x-auto md:auto-cols-[22%] md:gap-5 md:place-content-center   w-full'>
             <ProductCard/>
             <ProductCard/>
             <ProductCard/>

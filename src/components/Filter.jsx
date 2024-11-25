@@ -8,24 +8,28 @@ export const Filter = () => {
   };
 
   return (
-    <div>
+    <div className="border-2 border-gray-300 rounded-lg p-4">
         <FilterHeader title={"Filter"} icons={"fa-solid fa-filter"}/>
-      <div className='flex justify-between'>
-        <p>Casual</p>
-        <i className="fa-solid fa-circle-chevron-right"></i>
+      
+      <div className='border-b-2 py-4  border-gray-300'>
+        <div className='flex justify-between'>
+          <p>Casual</p>
+          <i className="fa-solid fa-circle-chevron-right"></i>
+        </div>
+        <div className='flex justify-between'>
+          <p>Casual</p>
+          <i className="fa-solid fa-circle-chevron-right"></i>
+        </div>
+        <div className='flex justify-between'>
+          <p>Casual</p>
+          <i className="fa-solid fa-circle-chevron-right"></i>
+        </div>
       </div>
-      <div className='flex justify-between'>
-        <p>Casual</p>
-        <i className="fa-solid fa-circle-chevron-right"></i>
-      </div>
-      <div className='flex justify-between'>
-        <p>Casual</p>
-        <i className="fa-solid fa-circle-chevron-right"></i>
-      </div>
+
       <div>
         <FilterHeader title={"Price"} icons={"fa-solid fa-filter"} />
         <DualRangeSlider min={0} max={1000} onChange={handleRangeChange} />
       </div>
     </div>
   );
-};
+}
