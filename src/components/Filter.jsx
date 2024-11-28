@@ -38,13 +38,13 @@ export const Filter = () => {
       </div>
       <div className='border-b-2 py-4  border-gray-300'>
         <FilterHeader title={"Color"} icons={"fa-solid fa-filter"} />
-        <div className='flex  w-full flex-wrap gap-4'>
-          <div className="bg-red-400 rounded-full w-8 h-8"></div>
-          <div className='bg-blue-400 w-8 h-8'></div>
-          <div className="bg-red-400 rounded-full w-8 h-8"></div>
-          <div className='bg-blue-400 w-8 h-8'></div>
-          <div className="bg-red-400 rounded-full w-8 h-8"></div>
-          <div className='bg-blue-400 w-8 h-8'></div>
+        <div className='flex  w-full flex-wrap gap-2'>
+          <div className="bg-red-400 rounded-full w-9 h-9"></div>
+          <div className='bg-blue-400 w-9 h-9  rounded-full'></div>
+          <div className="bg-red-400 rounded-full w-9 h-9"></div>
+          <div className='bg-blue-400 w-9 h-9  rounded-full'></div>
+          <div className="bg-red-400 rounded-full w-9 h-9"></div>
+          <div className='bg-blue-400 w-9 h-9  rounded-full'></div>
 
         </div>
       </div>
