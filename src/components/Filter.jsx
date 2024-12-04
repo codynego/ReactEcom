@@ -1,12 +1,75 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FilterHeader } from './FilterHeader';
 import { DualRangeSlider } from './DualRangeSlider';
 import { RangeSlider } from './RangeSlider'
+import { useState, UseEffect } from 'react';
 
-export const Filter = () => {
-  const [Slidervalue, setSliderValue] = React.useState([0, 1000]);
+
+
+export const Filter = ({products,  setProducts, setIsFetching}) => {
+  const [maxPrice, setMaxPrice] = useState(1000);
   
 
+  const [sliderValue, setSliderValue] = useState([0, maxPrice]);
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [categoryActive, setCategoryActive] = useState(false);
+  
+  
+    const buildUri = (category, priceRange) => {
+      let uri = 'https://api.escuelajs.co/api/v1/products';
+      const params = [];
+
+      if (categoryActive) {
+        params.push(`categoryId=${category}`);
+      }
+      if (priceRange) {
+        const [minPrice, maxPrice] = priceRange;
+        params.push(`price_min=${minPrice}`);
+        params.push(`price_max=${maxPrice}`);
+      }
+      if (params.length > 0) {
+        uri += `?${params.join('&')}`;
+      }
+      console.log(uri)
+      return uri;
+      
+    }
+        
+  // const [data, isDataFetched] = UseFetch(buildUri(selectedCategory, sliderValue), setIsFetching);
+  //   console.log(data)
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setIsFetching(true)
+        const response = await fetch(buildUri(selectedCategory, sliderValue));
+        const data = await response.json();
+        
+        setProducts(data);
+        setIsFetching(false)
+      } catch (error) {
+        console.error(error);
+        }
+      }
+      fetchData()
+  }, [selectedCategory, sliderValue]);
+
+
+
+
+  const handleCategoryChange = (category) => {
+    
+    if (selectedCategory) {
+      if (selectedCategory === category) {
+      setCategoryActive(!categoryActive);
+    } else {
+      setCategoryActive(true);
+      setSelectedCategory(category);
+    }
+  } else {
+    setSelectedCategory(category);
+    setCategoryActive(true);
+  }
+  }; 
 
   const handleRangeChange = (values) => {
     console.log('Selected range:', values);
@@ -17,25 +80,29 @@ export const Filter = () => {
         <FilterHeader  title={"Filter"} icons={"fa-solid fa-filter"} />
         <p className='py-5 border-b-2 border-gray-500'></p>
 
-      <div className='border-b-2 py-4  border-gray-300'>
+      <div className='border-b-2 py-4 border-gray-300'>
         <div className='flex justify-between'>
-          <p>Casual</p>
-          <i className="fa-solid fa-circle-chevron-right"></i>
+          <p>Clothes</p>
+          <i className="fa-solid fa-circle-chevron-right" onClick={() => handleCategoryChange(1)}></i>
         </div>
         <div className='flex justify-between'>
-          <p>Casual</p>
-          <i className="fa-solid fa-circle-chevron-right"></i>
+          <p>Shoes</p>
+          <i className="fa-solid fa-circle-chevron-right" onClick={() => handleCategoryChange(4)}></i>
         </div>
         <div className='flex justify-between'>
-          <p>Casual</p>
-          <i className="fa-solid fa-circle-chevron-right"></i>
+          <p>Electronics</p>
+          <i className="fa-solid fa-circle-chevron-right" onClick={() => handleCategoryChange(2)}></i>
+        </div>
+        <div className='flex justify-between'>
+          <p>Others</p>
+          <i className="fa-solid fa-circle-chevron-right" onClick={() => handleCategoryChange(3)}></i>
         </div>
       </div>
 
       <div className='border-b-2 py-4  border-gray-300'>
         <FilterHeader title={"Price"} icons={"fa-solid fa-filter"} />
         {/* <DualRangeSlider min={0} max={1000} onChange={handleRangeChange} /> */}
-        <RangeSlider Slidervalue={[Slidervalue, setSliderValue]} className="bg-red-500 text-blue-900" />
+        <RangeSlider Slidervalue={[sliderValue, setSliderValue]} maxPrice={maxPrice} setMaxPrice={setMaxPrice}className="bg-red-500 text-blue-900" />
       </div>
 
       <div className='border-b-2 py-4  border-gray-300'>

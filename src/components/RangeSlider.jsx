@@ -1,12 +1,13 @@
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import Typography from '@mui/material/Typography';
+import { useEffect } from 'react';
 
-export const RangeSlider = ({ Slidervalue }) => {
+export const RangeSlider = ({ Slidervalue, maxPrice, setMaxPrice }) => {
   const [value, setValue] = Slidervalue;
 
   const handleChange = (event, newValue) => {
-    console.log(value);
+    setMaxPrice(value[1]);
     setValue(newValue);
   };
 
@@ -19,7 +20,7 @@ export const RangeSlider = ({ Slidervalue }) => {
         valueLabelDisplay="auto"
         getAriaValueText={valuetext}
         min={0}
-        max={1000}
+        max={maxPrice + 10}
         sx={{ color: 'black' }}
         className="text-black"
       />
